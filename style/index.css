@@ -32,7 +32,6 @@ h2 {
   margin-left: auto;
 }
 
-
 #home a {
   margin-right: 30px;
   color: #4b5563;
@@ -321,109 +320,46 @@ h2 {
 
 @media (max-width: 425px) {
 
-  /* --- Implementación del Menú Hamburguesa --- */
+  .hamburguer{
+        width: 10%;
+        display: block;
+        margin-left: auto;
+    }
 
-  /* Muestra el ícono de hamburguesa */
-  .hamburguer {
-    display: block;
-    /* Lo hace visible */
-    order: 3;
-    /* Lo coloca al final, después del logo y usuario */
-    margin-left: 0;
-    /* Resetea el margen automático */
-    margin-right: 5%;
-    /* Le da un espacio a la derecha */
-  }
-  
+#menu-toggle:checked + .hamburguer + ul {
+        display: flex;
+    }
 
-  /* Ajusta el contenedor principal del menú */
+
   .container-menu {
-    position: relative;
-    /* Necesario para posicionar el menú desplegable */
-    justify-content: space-between;
-    /* Espacia el logo y los íconos */
-    flex-wrap: wrap;
-    /* Permite que los elementos pasen a la línea de abajo si no caben */
-    height: auto;
-    /* Altura automática para acomodar el contenido */
-    padding: 15px 0;
-    /* Añade un poco de padding vertical */
-    font-size: 1rem;
-    /* Cambia 'vw' a 'rem' para un tamaño de fuente estable */
-  }
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 80px;
+        padding: 15px 5%;
+    }
 
-  /* Oculta la lista de menú (los enlaces) por defecto */
-  .container-menu ul {
-    display: none;
-    /* Oculto por defecto */
-    flex-direction: column;
-    /* Apila los enlaces verticalmente */
-    position: absolute;
-    /* Lo saca del flujo normal */
-    top: 100%;
-    /* Lo posiciona justo debajo del header */
-    left: 0;
-    width: 100%;
-    background-color: #b91c1c;
-    /* Le da el mismo fondo que el header */
-    margin-left: 0;
-    /* Resetea el margen */
-    padding: 0;
-    z-index: 100;
-    /* Se asegura que esté por encima de otro contenido */
-    align-items: center;
-    /* Centra los items */
-  }
+    #id_logo {
+        height: 200px;
+        width: auto;
+    }
 
-  /* Estilos para los items del menú desplegable */
-  .container-menu li {
-    padding: 15px 0;
-    /* Padding vertical */
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid rgb(100, 34, 34);
-    /* Línea separadora */
-  }
+    .container-menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 10; 
+        margin: 15px 0 0 0;
+        gap: 10px;
+        padding: 0;
+    }
+    .container-menu li{
+      width: 30%;
+    }
 
-  .container-menu li:last-child {
-    border-bottom: none;
-    /* Quita la línea del último item */
-  }
 
-  /* El enlace 'a' dentro del menú */
-  .container-menu a {
-    padding: 15px;
-    /* Un área de click más grande */
-    display: block;
-    /* Hace que todo el 'li' sea clickeable */
-  }
 
-  .container-menu li :hover {
-    /* Mantiene el hover pero quita el borde inferior que no se verá bien */
-    color: rgb(100, 34, 34);
-    border-bottom: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Efecto hover sutil */
-  }
-
-  /* Esta es la magia: Muestra el menú 'ul' cuando el checkbox '#menu-toggle' está activado */
-  #menu-toggle:checked~.container-menu ul {
-    display: flex;
-    /* Muestra el menú */
-  }
 
   /* --- Ajustes de Layout Móvil --- */
-
-  /* Logo y Usuario en la barra de navegación */
-  #id_logo {
-    height: 120px;
-    /* Reduce la altura del logo */
-    width: auto;
-    /* Permite que el ancho se ajuste */
-    padding-left: 5%;
-    order: 1;
-    /* Primer elemento */
-  }
 
   #user {
     display: none;
